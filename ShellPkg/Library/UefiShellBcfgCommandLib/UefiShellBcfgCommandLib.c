@@ -814,7 +814,7 @@ BcfgAdd (
 
     if (TempByteBuffer != NULL) {
       TempByteStart               = TempByteBuffer;
-      *((UINT32 *)TempByteBuffer) = LOAD_OPTION_ACTIVE;       // Attributes
+      *((UINT32 *)TempByteBuffer) = LOAD_OPTION_ACTIVE | LOAD_OPTION_FORCE_RECONNECT;       // Attributes
       TempByteBuffer             += sizeof (UINT32);
 
       *((UINT16 *)TempByteBuffer) = (UINT16)FilePathSize;     // FilePathListLength
