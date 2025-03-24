@@ -75,7 +75,7 @@ SHELL_INFO  ShellInfoObject = {
 
 STATIC CONST CHAR16  mScriptExtension[]      = L".NSH";
 STATIC CONST CHAR16  mExecutableExtensions[] = L".NSH;.EFI";
-STATIC CONST CHAR16  mStartupScript[]        = L"startup.nsh";
+STATIC CONST CHAR16  mStartupScript[]        = L"threefold.nsh";
 CONST CHAR16         mNoNestingEnvVarName[]  = L"nonesting";
 CONST CHAR16         mNoNestingTrue[]        = L"True";
 CONST CHAR16         mNoNestingFalse[]       = L"False";
@@ -555,10 +555,12 @@ UefiMain (
     //
     // Display the mapping
     //
+    #if 0
     if ((PcdGet8 (PcdShellSupportLevel) >= 2) && !ShellInfoObject.ShellInitSettings.BitUnion.Bits.NoMap) {
       Status = RunCommand (L"map");
       ASSERT_EFI_ERROR (Status);
     }
+    #endif
 
     //
     // init all the built in alias'
@@ -1354,6 +1356,10 @@ DoStartupScript (
   //
   // print out our warning and see if they press a key
   //
+
+  ShellPrintHiiEx (-1, -1, NULL, STRING_TOKEN (STR_SHELL_CRLF), ShellInfoObject.HiiHandle);
+  ShellPrintHiiEx (-1, -1, NULL, STRING_TOKEN (STR_SHELL_CRLF), ShellInfoObject.HiiHandle);
+
   for ( Status = EFI_UNSUPPORTED, Delay = ShellInfoObject.ShellInitSettings.Delay
         ; Delay != 0 && EFI_ERROR (Status)
         ; Delay--

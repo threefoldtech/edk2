@@ -24,7 +24,7 @@
 #string STR_GEN_PROBLEM               #language en-US "The argument '%B%s%N' is incorrect.\r\n"
 #string STR_SHELL_SHELL               #language en-US "%EShell> %N"
 
-#string STR_SHELL_STARTUP_QUESTION    #language en-US "%NPress %HESC%N in %d seconds to skip %Estartup.nsh%N or any other key to continue."
+#string STR_SHELL_STARTUP_QUESTION    #language en-US "%NPress %HESC%N in %d seconds to skip %Ethreefold.nsh%N or any other key to continue."
 
 #string STR_SHELL_ENTER_TO_CONT       #language en-US "%NPress ENTER to continue:%E"
 #string STR_SHELL_QUIT_CONT           #language en-US "%NPress ENTER to continue or 'Q' break:%E"
